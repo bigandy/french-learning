@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import { ToggleExample } from "@/components/ToggleExample";
 
 async function getVerbs() {
-  const { data } = await import("../app/data/verbs");
+  const { data } = await import("../data/verbs");
 
   // const data = JSON.parse(file);
 
