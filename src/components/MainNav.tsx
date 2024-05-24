@@ -7,21 +7,32 @@ import Link from "next/link";
 
 import styles from "./MainHeader.module.css";
 
+const Pages = [
+  {
+    href: "/",
+    title: "Home",
+  },
+  {
+    href: "/test",
+    title: "Test",
+  },
+];
+
 export const MainNav = () => {
   const pathname = usePathname();
   return (
     <nav className={styles.nav}>
       <ul>
-        <li>
-          <Link href="/" className={pathname == "/" ? "active" : ""}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link href="/test" className={pathname == "/test" ? "active" : ""}>
-            Test
-          </Link>
-        </li>
+        {Pages.map((page) => (
+          <li key={page.href}>
+            <Link
+              href={page.href}
+              className={pathname == page.href ? "active" : ""}
+            >
+              {page.title}
+            </Link>
+          </li>
+        ))}
       </ul>
     </nav>
   );
