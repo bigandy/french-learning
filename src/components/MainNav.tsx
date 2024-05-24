@@ -16,6 +16,10 @@ const Pages = [
     href: "/test",
     title: "Test",
   },
+  {
+    href: "/custom-element-test",
+    title: "Custom Element Test",
+  },
 ];
 
 export const MainNav = () => {
